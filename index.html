@@ -103,8 +103,6 @@
     <p class="copyright">© 2026 Llamatek</p>
   </section>
   <script>
-    let galleryIndex = 1;
-    let galleryTimer;
     function showGallery(index) {
       galleryIndex = index;
 
@@ -122,12 +120,6 @@
       });
 
       slide.classList.add("active");
-
-      clearTimeout(galleryTimer);
-      galleryTimer = setTimeout(() => {
-        var next = galleryIndex % 3 + 1;
-        showGallery(next);
-      }, 30000);
     }
 
     showGallery(1);
