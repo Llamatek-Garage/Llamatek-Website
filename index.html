@@ -16,17 +16,51 @@
   </nav>
 
   <section class="intro">
-    <div class="galleryslide" style="transform: scale(1.02); background-image: url(images/LLamatek_Modular_Vehicle_Models_Unity_Asset_Store_image7.png);"></div>
-    <div class="gallerycontent" style="transform: translateY(180px);">
-      <div class="gallerycontentanimation1">
-        <h1 style="text-shadow: 1px 1px black; font-size: 80px; transform: translateY(-140px);">Llamatek</h1>
-        <p style="text-shadow: 1px 1px black; font-size: 30px;">
-          Llamatek provides stylized low poly vehicle packs built for real game development.
-          Expect realistic proportions, full interiors, modular variations, working parts,
-          and consistent setup across every package.
-        </p >
-        <p style="text-shadow: 1px 1px black;">Includes more vehicles than strictly necessary. ❤️</p>
+    <div id="galleryslide1" class="galleryslide">
+      <div class="gallerybackground" style="transform: scale(1.02); background-image: url(images/LLamatek_Modular_Vehicle_Models_Unity_Asset_Store_image7.png);"></div>
+      <div class="gallerycontent" style="transform: translateY(360px);">
+        <div class="gallerycontentanimation1">
+          <h1 style="text-shadow: 1px 1px black; font-size: 80px; transform: translateY(-140px);">Llamatek</h1>
+          <p style="text-shadow: 1px 1px black; font-size: 30px;">
+            Llamatek provides stylized low poly vehicle packs built for real game development.
+            Expect realistic proportions, full interiors, modular variations, working parts,
+            and consistent setup across every package.
+          </p >
+          <p style="text-shadow: 1px 1px black;">Includes more vehicles than strictly necessary. ❤️</p>
+        </div>
       </div>
+    </div>
+    <div id="galleryslide2" class="galleryslide">
+      <div class="gallerybackground" style="transform: scale(1.02); background-image: url(images/LLamatek_Modular_Vehicle_Models_Unity_Asset_Store_image2.png);"></div>
+      <div class="gallerycontent" style="transform: translateY(120px);">
+        <div class="gallerycontentanimation2">
+          <h1 style="text-shadow: 1px 1px black; font-size: 80px; text-align: center; transform: translateY(0px);">Build it your way</h1>
+          <p style="text-shadow: 1px 1px black; font-size: 30px; text-align: center;">
+            Every vehicle is built from individual parts, giving you the freedom to mix, match, swap, and customize.
+            Doors, bumpers, lights, wheels, interiors and body panels.
+            Build the vehicle you want, or take the parts further and create something entirely your own.
+          </p >
+          <p style="text-shadow: 1px 1px black; text-align: center;">One vehicle. Hundreds of possibilities.</p>
+        </div>
+      </div>
+    </div>
+    <div id="galleryslide3" class="galleryslide">
+      <div class="gallerybackground" style="transform: scale(1.02); background-image: url(images/LLamatek_Modular_Vehicle_Models_Unity_Asset_Store_image12.png);"></div>
+      <div class="gallerycontent" style="transform: translateY(170px);">
+        <div class="gallerycontentanimation3">
+          <h1 style="text-shadow: 1px 1px black; font-size: 80px; transform: translateY(0px);">Low poly<br>Real character</h1>
+          <p style="text-shadow: 1px 1px black; font-size: 30px;">
+            Stylized low-poly vehicles with realistic proportions, strong silhouettes, and the details that bring them to life.
+            Designed to stand out in a screenshot and still feel at home in the game.
+          </p >
+          <p style="text-shadow: 1px 1px black;">That's Llamatek. 😉</p>
+        </div>
+      </div>
+    </div>
+    <div class="gallerybuttons">
+      <button onclick="showGallery(1)">●</button>
+      <button onclick="showGallery(2)">●</button>
+      <button onclick="showGallery(3)">●</button>
     </div>
     <div class="scrolldown" style="left: 12%">↓</div>
     <div class="scrolldown" style="right: 12%">↓</div>
@@ -58,6 +92,35 @@
     </div>
     <p class="copyright">© 2026 Llamatek</p>
   </section>
+  <script>
+    let galleryIndex = 1;
+    let galleryTimer;
+    function showGallery(index) {
+      galleryIndex = index;
 
+      document.querySelectorAll(".galleryslide").forEach(slide => {
+        slide.classList.remove("active");
+      });
+
+      var slide = document.getElementById("galleryslide" + index);
+      var animations = slide.querySelectorAll("[class*='gallerycontentanimation']");
+
+      animations.forEach(animation => {
+        animation.style.animation = "none";
+        animation.offsetHeight;
+        animation.style.animation = "";
+      });
+
+      slide.classList.add("active");
+
+      clearTimeout(galleryTimer);
+      galleryTimer = setTimeout(() => {
+        var next = galleryIndex % 3 + 1;
+        showGallery(next);
+      }, 30000);
+    }
+
+    showGallery(1);
+    </script>
 </body>
 </html>
