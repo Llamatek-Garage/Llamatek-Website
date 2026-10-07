@@ -40,7 +40,16 @@ body {
 .navbar a:hover {
   color: white;
 }
-
+.nav-home {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.navbar-logo {
+  height: 40px;
+  width: auto;
+  display: block;
+}
 .nav-right {
   display: flex;
   align-items: center;
@@ -82,11 +91,16 @@ section {
   position: relative;
   margin: 0;
   min-height: 100vh;
-  background-color: #dfe8f3;
+  padding: 0;
   display: flex;
   align-items: center;
-  padding: 0;
   content-visibility: auto;
+}
+
+.horizontal {
+  display: flex;
+  justify-content: center;
+  gap: 80px;
 }
 
 .galleryslide {
@@ -117,6 +131,7 @@ section {
 
 .centeredblock {
   text-align: center;
+  padding-bottom: 78px;
 }
 
 .btw {
