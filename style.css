@@ -154,11 +154,11 @@ section {
 @keyframes scrolldown {
   0% {
     opacity: 0;
-    transform: translate(-50%, -10px);
+    transform: translate(-50%, -50px);
   }
   70% {
     opacity: 0;
-    transform: translate(-50%, -10px);
+    transform: translate(-50%, -50px);
   }
   80% {
     opacity: 1;
