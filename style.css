@@ -16,15 +16,17 @@ body {
 }
 
 .navbar {
-  position: sticky;
+  position: fixed;
   top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 12px 24px;
-  background: rgba(14, 16, 19, 0.95);
-  border-bottom: 1px solid var(--border);
+  background: rgba(14, 16, 19, 0.75);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
 }
 
@@ -56,14 +58,6 @@ header.hero h1 {
   letter-spacing: 1px;
 }
 
-
-section {
-  max-width: 900px;
-  margin: 60px auto;
-  padding: 0 24px;
-}
-
-
 .btn {
   margin-top: 15px;
   display: inline-flex;
@@ -80,7 +74,35 @@ section {
 }
 
 section {
+  margin: 60px auto;
   padding-bottom: 50px;
+}
+
+.intro {
+  position: relative;
+  margin: 0;
+  min-height: 100vh;
+  background-color: #dfe8f3;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  content-visibility: auto;
+}
+
+.galleryslide {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+}
+
+.gallerycontent {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  max-width: 900px;
+  padding: 50px;
+  color: white;
 }
 
 .btn:hover {
@@ -99,28 +121,4 @@ section {
 
 .btw {
   color:#818b98;
-}
-
-@media (max-width: 600px) {
-  .navbar {
-    padding: 12px 16px;
-  }
-
-  header.hero {
-    padding: 70px 20px 60px;
-  }
-
-  header.hero h1 {
-    font-size: 36px;
-  }
-
-  section {
-    margin: 45px auto;
-    padding: 0 16px;
-  }
-
-  .asset-store,
-  .cta {
-    padding: 26px 20px;
-  }
 }
