@@ -173,6 +173,8 @@ section {
   opacity: 0;
   animation: scrolldown 5s ease-in-out infinite;
   color: white;
+  pointer-events: none;
+  user-select: none;
 }
 
 @keyframes scrolldown {
