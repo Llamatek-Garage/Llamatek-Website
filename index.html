@@ -3,19 +3,25 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Llamatech</title>
+  <title>Llamatek</title>
   <link rel="stylesheet" href="style.css">
 </head>
 
-<body>
+<body id="top">
+  <nav class="navbar">
+    <a class="nav-home" href="#top">Home</a>
+
+    <div class="nav-right">
+      <a href="manual.html">Documentation</a>
+    </div>
+  </nav>
   <header class="hero">
-    <h1>Llamatech</h1>
+    <h1>Llamatek</h1>
     <p>Stylized low poly vehicle packs for real game development.</p>
   </header>
-
   <section class="intro">
     <p>
-      Llamatech provides stylized low poly vehicle packs built for real game development.
+      Llamatek provides stylized low poly vehicle packs built for real game development.
       Expect realistic proportions, full interiors, modular variations, working parts,
       and consistent setup across every package.
     </p>
@@ -27,7 +33,7 @@
 
   <section class="asset-store">
     <h2>Unity Asset Store</h2>
-    <p class="asset-store-lead">Get Llamatech vehicle packs on the Unity Asset Store.</p>
+    <p class="asset-store-lead">Get Llamatek vehicle packs on the Unity Asset Store.</p>
     <!-- Replace href="#" with your publisher or package URL when you have it. -->
     <a class="btn-asset-store" href="#">View on the Unity Asset Store</a>
   </section>
@@ -43,7 +49,7 @@
     <div class="discord-widget-wrap">
       <iframe
         class="discord-widget"
-        title="Llamatech Discord server — online members and invite"
+        title="Llamatek Discord server — online members and invite"
         src="https://discord.com/widget?id=1503638081813876756&amp;theme=light"
         width="350"
         height="500"
@@ -53,86 +59,5 @@
     </div>
   </section>
 
-  <section class="unity-demo">
-    <!--<div class="unity-demo-header">
-      <h2>Interactive Demo</h2>
-      <p class="unity-demo-lead">Explore Llamatech vehicles directly in your browser.</p>
-    </div>-->
-    <div class="unity-demo-wrap" id="unity-demo-wrap">
-      <iframe
-        id="unity-iframe"
-        class="unity-iframe"
-        src="demo/index.html"
-        title="Llamatech interactive demo"
-        allowfullscreen
-        loading="lazy"
-        tabindex="-1"></iframe>
-      <div class="unity-vignette" aria-hidden="true"></div>
-      <div class="unity-frame-overlay" aria-hidden="true"></div>
-      <button type="button" class="unity-focus-gate" id="unity-focus-gate" aria-label="Click to interact with demo">
-        <span class="unity-focus-label">Click to interact</span>
-      </button>
-      <div class="unity-exit-hint" aria-hidden="true">
-        <span class="unity-focus-label">[Esc] to exit</span>
-      </div>
-    </div>
-  </section>
-
-  <!--<footer>
-    <p class="footer-copy">© Llamatech</p>
-    <p class="footer-email">
-      <a href="mailto:llamatech_unity@outlook.com">llamatech_unity@outlook.com</a>
-    </p>
-  </footer>-->
-
-  <script>
-    (function () {
-      var wrap = document.getElementById("unity-demo-wrap");
-      var iframe = document.getElementById("unity-iframe");
-      var gate = document.getElementById("unity-focus-gate");
-
-      function focusDemo() {
-        wrap.classList.add("is-focused");
-        iframe.focus();
-      }
-
-      function unfocusDemo() {
-        wrap.classList.remove("is-focused");
-        iframe.blur();
-        gate.focus();
-      }
-
-      gate.addEventListener("click", focusDemo);
-
-      document.addEventListener("keydown", function (e) {
-        if (e.key === "Escape" && wrap.classList.contains("is-focused")) {
-          unfocusDemo();
-        }
-      });
-
-      window.addEventListener("scroll", function () {
-        if (wrap.classList.contains("is-focused")) {
-          unfocusDemo();
-        }
-      }, { passive: true });
-
-      function blockMiddleMouse(e) {
-        if (!wrap.classList.contains("is-focused")) return;
-        if (e.button === 1) e.preventDefault();
-      }
-
-      document.addEventListener("mousedown", blockMiddleMouse, true);
-      document.addEventListener("mouseup", blockMiddleMouse, true);
-      document.addEventListener("auxclick", function (e) {
-        if (wrap.classList.contains("is-focused")) e.preventDefault();
-      }, true);
-
-      window.addEventListener("message", function (e) {
-        if (e.data === "unity-unfocus") {
-          unfocusDemo();
-        }
-      });
-    })();
-  </script>
 </body>
 </html>
