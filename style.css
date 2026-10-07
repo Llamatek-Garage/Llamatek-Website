@@ -311,7 +311,7 @@ section {
   transform: translateX(-50%);
   font-size: 40px;
   opacity: 0;
-  animation: scrolldown 5s ease-in-out infinite;
+  animation: scrolldown 15s ease-in-out infinite;
   color: white;
   pointer-events: none;
   user-select: none;
@@ -322,15 +322,15 @@ section {
     opacity: 0;
     transform: translate(-50%, -50px);
   }
-  70% {
+  90% {
     opacity: 0;
     transform: translate(-50%, -50px);
   }
-  80% {
+  93% {
     opacity: 1;
   }
 
-  90% {
+  97% {
     opacity: 1;
   }
 
